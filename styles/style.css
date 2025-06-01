@@ -1,0 +1,560 @@
+/* Global Styles */
+:root {
+    --primary-color: #0056b3;
+    --secondary-color: #003366;
+    --accent-color: #ffc107;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.hero-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.hero-slide .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section h1 {
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.3s;
+}
+
+.hero-section p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.5s;
+}
+
+.hero-section .btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease 0.7s;
+}
+
+.hero-slide.active h1,
+.hero-slide.active p,
+.hero-slide.active .btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slider Controls - Fix Position and Style */
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.slider-control.prev {
+    left: 32px;
+}
+
+.slider-control.next {
+    right: 32px;
+}
+
+.slider-control:hover {
+    background: rgba(0, 0, 0, 0.7);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-control i {
+    pointer-events: none;
+    font-size: 2rem;
+    line-height: 1;
+}
+
+/* Slider Indicators */
+.slider-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+}
+
+/* Responsive Design for Hero Section and General Layout */
+@media (max-width: 992px) {
+    .hero-section .container,
+    .hero-section .row {
+        text-align: center;
+        justify-content: center;
+    }
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    .hero-section p {
+        font-size: 1.1rem;
+    }
+    .hero-section .btn {
+        margin: 1rem auto 0 auto;
+        display: inline-block;
+    }
+    .slider-control.prev {
+        left: 8px;
+    }
+    .slider-control.next {
+        right: 8px;
+    }
+    .mobile-navbar {
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        border-radius: 0 0 12px 12px;
+        z-index: 1000;
+    }
+    .navbar-nav {
+        width: 100%;
+        padding: 0.5rem 0;
+    }
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: left;
+    }
+    .navbar-nav .nav-link {
+        width: 100%;
+        padding: 1.1rem 2rem !important;
+        font-size: 1.1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .navbar-nav .nav-link:last-child {
+        border-bottom: none;
+    }
+    .navbar-toggler {
+        font-size: 1.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: 60vh;
+    }
+    .hero-slider {
+        height: 60vh;
+    }
+    .hero-slide {
+        min-height: 60vh;
+        padding: 40px 0 20px 0;
+    }
+    .hero-section h1 {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    .hero-section p {
+        font-size: 1rem;
+    }
+    .slider-control {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+    }
+    .slider-indicators {
+        bottom: 10px;
+        gap: 6px;
+    }
+    .indicator {
+        width: 14px;
+        height: 14px;
+    }
+    .navbar {
+        padding: 0.5rem 0;
+    }
+    .navbar-nav {
+        background: #fff;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        margin-top: 0.5rem;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1.5rem !important;
+        text-align: left;
+    }
+    .section-title {
+        font-size: 1.3rem;
+    }
+    .service-card {
+        padding: 1.2rem;
+    }
+    .contact-form, .contact-info {
+        padding: 1rem;
+    }
+    .project-card img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        min-height: 45vh;
+    }
+    .hero-slider, .hero-slide {
+        height: 45vh;
+        min-height: 45vh;
+    }
+    .hero-section h1 {
+        font-size: 1.1rem;
+    }
+    .slider-control {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    .project-card img {
+        height: 120px;
+    }
+}
+
+/* Section Styles */
+.section-title {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    font-weight: 700;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.section-title.text-center::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Service Cards */
+.service-card {
+    padding: 2rem;
+    text-align: center;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+/* Contact Form */
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+/* Contact Info */
+.contact-info {
+    padding: 2rem;
+}
+
+.contact-info p {
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--secondary-color);
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent-color) !important;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service-card, .contact-form {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Project Section */
+.project-filters {
+    margin-bottom: 2rem;
+}
+
+.project-filters .btn {
+    margin: 0.25rem;
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+}
+
+.project-filters .btn.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+}
+
+.project-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 2rem 1.5rem 1.5rem;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    transform: translateY(0);
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-overlay p {
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+/* Project Modal */
+.modal-content {
+    border-radius: 10px;
+    border: none;
+}
+
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-header .btn-close {
+    color: white;
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-body img {
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+}
+
+.modal-body h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.modal-body ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Project Item Animation */
+.project-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.project-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}

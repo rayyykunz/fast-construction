@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. FAST - Construction Excellence</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid px-3 px-md-5">
+            <a class="navbar-brand" href="#">
+                <span class="text-primary fw-bold">PT. FAST</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse mobile-navbar" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: url('images/slide1.jpg')">
+                <div class="container">
+                    <div class="row min-vh-100 align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-4 fw-bold text-white">Building Tomorrow's Infrastructure Today</h1>
+                            <p class="lead text-white">Excellence in construction, engineering, and project management</p>
+                            <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/slide2.jpg')">
+                <div class="container">
+                    <div class="row min-vh-100 align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-4 fw-bold text-white">Innovative Construction Solutions</h1>
+                            <p class="lead text-white">Delivering quality projects with cutting-edge technology</p>
+                            <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/slide3.jpg')">
+                <div class="container">
+                    <div class="row min-vh-100 align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-4 fw-bold text-white">Your Trusted Construction Partner</h1>
+                            <p class="lead text-white">Building dreams into reality with expertise and dedication</p>
+                            <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/slide4.jpg')">
+                <div class="container">
+                    <div class="row min-vh-100 align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-4 fw-bold text-white">Quality & Safety First</h1>
+                            <p class="lead text-white">Committed to excellence in every project we undertake</p>
+                            <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/slide5.jpg')">
+                <div class="container">
+                    <div class="row min-vh-100 align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-4 fw-bold text-white">Sustainable Construction</h1>
+                            <p class="lead text-white">Building for a better tomorrow with eco-friendly solutions</p>
+                            <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: url('images/slide6.jpg')">
+                <div class="container">
+                    <div class="row min-vh-100 align-items-center">
+                        <div class="col-lg-6">
+                            <h1 class="display-4 fw-bold text-white">Global Construction Excellence</h1>
+                            <p class="lead text-white">Delivering world-class construction services</p>
+                            <a href="#contact" class="btn btn-primary btn-lg">Get in Touch</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slider Controls -->
+        <button class="slider-control prev" id="prevSlide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-control next" id="nextSlide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        
+        <!-- Slider Indicators -->
+        <div class="slider-indicators">
+            <button class="indicator active" data-slide="0"></button>
+            <button class="indicator" data-slide="1"></button>
+            <button class="indicator" data-slide="2"></button>
+            <button class="indicator" data-slide="3"></button>
+            <button class="indicator" data-slide="4"></button>
+            <button class="indicator" data-slide="5"></button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">About PT. FAST</h2>
+                    <p class="lead">We are a leading construction company committed to delivering excellence in every project.</p>
+                    <p>With years of experience in the industry, we specialize in:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-primary me-2"></i> Commercial Construction</li>
+                        <li><i class="fas fa-check text-primary me-2"></i> Industrial Projects</li>
+                        <li><i class="fas fa-check text-primary me-2"></i> Infrastructure Development</li>
+                        <li><i class="fas fa-check text-primary me-2"></i> Project Management</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/project1.jpg" alt="About PT. FAST" class="img-fluid rounded shadow">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Our Services</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <i class="fas fa-building fa-3x text-primary mb-3"></i>
+                        <h3>Sipil Bangunan</h3>
+                        <p>Konstruksi bangunan sipil berkualitas tinggi dengan standar keamanan terbaik.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <i class="fas fa-industry fa-3x text-primary mb-3"></i>
+                        <h3>Fabrikasi Baja</h3>
+                        <p>Fabrikasi dan konstruksi baja untuk berbagai kebutuhan industri.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                        <h3>MEP</h3>
+                        <p>Layanan Mechanical, Electrical, dan Plumbing yang terintegrasi.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="service-card">
+                        <i class="fas fa-paint-brush fa-3x text-primary mb-3"></i>
+                        <h3>Interior & Design</h3>
+                        <p>Desain interior modern dan inovatif untuk berbagai jenis ruangan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Our Projects</h2>
+            
+            <!-- Project Filter -->
+            <div class="project-filters text-center mb-4">
+                <button class="btn btn-outline-primary active" data-filter="all">Semua Proyek</button>
+                <button class="btn btn-outline-primary" data-filter="sipil">Sipil Bangunan</button>
+                <button class="btn btn-outline-primary" data-filter="baja">Fabrikasi Baja</button>
+                <button class="btn btn-outline-primary" data-filter="mep">MEP</button>
+                <button class="btn btn-outline-primary" data-filter="interior">Interior & Design</button>
+            </div>
+
+            <div class="row g-4" id="projects-grid">
+                <!-- Sipil Bangunan Projects -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="sipil">
+                    <div class="project-card">
+                        <img src="images/civil_infrastructure1.jpg" alt="Gedung Perkantoran Modern" class="img-fluid">
+                        <div class="project-overlay">
+                            <h3>Gedung Perkantoran Modern</h3>
+                            <p>Konstruksi Sipil</p>
+                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal1">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 project-item" data-category="sipil">
+                    <div class="project-card">
+                        <img src="images/civil_infrastructure2.jpg" alt="Apartemen Premium" class="img-fluid">
+                        <div class="project-overlay">
+                            <h3>Apartemen Premium</h3>
+                            <p>Konstruksi Sipil</p>
+                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal1-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fabrikasi Baja Projects -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="baja">
+                    <div class="project-card">
+                        <img src="images/steel_fabrication1.jpg" alt="Pabrik Manufaktur" class="img-fluid">
+                        <div class="project-overlay">
+                            <h3>Pabrik Manufaktur</h3>
+                            <p>Fabrikasi Baja</p>
+                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 project-item" data-category="baja">
+                    <div class="project-card">
+                        <img src="images/steel_fabrication2.jpg" alt="Gudang Logistik" class="img-fluid">
+                        <div class="project-overlay">
+                            <h3>Gudang Logistik</h3>
+                            <p>Fabrikasi Baja</p>
+                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal2-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEP Projects -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="mep">
+                    <div class="project-card">
+                        <img src="images/MEP1.jpg" alt="Sistem MEP Terintegrasi" class="img-fluid">
+                        <div class="project-overlay">
+                            <h3>Sistem MEP Terintegrasi</h3>
+                            <p>Mechanical, Electrical, Plumbing</p>
+                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal3">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 project-item" data-category="mep">
+                    <div class="project-card">
+                        <img src="images/MEP2.jpg" alt="Sistem HVAC Modern" class="img-fluid">
+                        <div class="project-overlay">
+                            <h3>Sistem HVAC Modern</h3>
+                            <p>Mechanical, Electrical, Plumbing</p>
+                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal3-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Interior & Design Projects -->
+                <div class="col-md-6 col-lg-4 project-item" data-category="interior">
+                    <div class="project-card">
+                        <img src="images/design_interior1.jpg" alt="Desain Interior Modern" class="img-fluid">
+                        <div class="project-overlay">
+                            <h3>Desain Interior Modern</h3>
+                            <p>Interior & Design</p>
+                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal4">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 project-item" data-category="interior">
+                    <div class="project-card">
+                        <img src="images/design_interior2.jpg" alt="Renovasi Hotel" class="img-fluid">
+                        <div class="project-overlay">
+                            <h3>Renovasi Hotel</h3>
+                            <p>Interior & Design</p>
+                            <a href="#" class="btn btn-light btn-sm" data-bs-toggle="modal" data-bs-target="#projectModal4-2">Lihat Detail</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <!-- Sipil Bangunan Modals -->
+    <!-- Modal 1 -->
+    <div class="modal fade" id="projectModal1" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Gedung Perkantoran Modern</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/civil_infrastructure1.jpg" alt="Gedung Perkantoran Modern" class="img-fluid mb-3">
+                    <h4>Detail Proyek</h4>
+                    <p>Gedung perkantoran modern dengan desain sustainable dan fasilitas terkini.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Lokasi:</strong> Jakarta Business District</li>
+                        <li><strong>Luas:</strong> 50,000 m²</li>
+                        <li><strong>Selesai:</strong> 2023</li>
+                        <li><strong>Layanan:</strong> Desain, Konstruksi, Manajemen Proyek</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 1-2 -->
+    <div class="modal fade" id="projectModal1-2" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Apartemen Premium</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/civil_infrastructure2.jpg" alt="Apartemen Premium" class="img-fluid mb-3">
+                    <h4>Detail Proyek</h4>
+                    <p>Kompleks apartemen premium dengan fasilitas lengkap dan desain modern.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Lokasi:</strong> Jakarta Selatan</li>
+                        <li><strong>Luas:</strong> 35,000 m²</li>
+                        <li><strong>Selesai:</strong> 2023</li>
+                        <li><strong>Layanan:</strong> Konstruksi, Manajemen Proyek</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fabrikasi Baja Modals -->
+    <!-- Modal 2 -->
+    <div class="modal fade" id="projectModal2" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pabrik Manufaktur</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/steel_fabrication1.jpg" alt="Pabrik Manufaktur" class="img-fluid mb-3">
+                    <h4>Detail Proyek</h4>
+                    <p>Fasilitas manufaktur dengan sistem produksi terotomatisasi dan fitur ramah lingkungan.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Lokasi:</strong> Kawasan Industri, Surabaya</li>
+                        <li><strong>Luas:</strong> 75,000 m²</li>
+                        <li><strong>Selesai:</strong> 2023</li>
+                        <li><strong>Layanan:</strong> Fabrikasi Baja, Instalasi Peralatan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2-2 -->
+    <div class="modal fade" id="projectModal2-2" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Gudang Logistik</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/steel_fabrication2.jpg" alt="Gudang Logistik" class="img-fluid mb-3">
+                    <h4>Detail Proyek</h4>
+                    <p>Gudang logistik modern dengan sistem penyimpanan terotomatisasi.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Lokasi:</strong> Bekasi</li>
+                        <li><strong>Luas:</strong> 45,000 m²</li>
+                        <li><strong>Selesai:</strong> 2023</li>
+                        <li><strong>Layanan:</strong> Fabrikasi Baja, Sistem Otomatisasi</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MEP Modals -->
+    <!-- Modal 3 -->
+    <div class="modal fade" id="projectModal3" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sistem MEP Terintegrasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/MEP1.jpg" alt="Sistem MEP Terintegrasi" class="img-fluid mb-3">
+                    <h4>Detail Proyek</h4>
+                    <p>Sistem MEP terintegrasi untuk gedung perkantoran modern dengan efisiensi energi tinggi.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Lokasi:</strong> Jakarta Selatan</li>
+                        <li><strong>Luas Area:</strong> 30,000 m²</li>
+                        <li><strong>Selesai:</strong> 2023</li>
+                        <li><strong>Layanan:</strong> Instalasi MEP, Sistem Kontrol, Maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3-2 -->
+    <div class="modal fade" id="projectModal3-2" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sistem HVAC Modern</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/MEP2.jpg" alt="Sistem HVAC Modern" class="img-fluid mb-3">
+                    <h4>Detail Proyek</h4>
+                    <p>Sistem HVAC modern dengan kontrol suhu terintegrasi dan efisiensi energi tinggi.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Lokasi:</strong> Jakarta Pusat</li>
+                        <li><strong>Luas Area:</strong> 25,000 m²</li>
+                        <li><strong>Selesai:</strong> 2023</li>
+                        <li><strong>Layanan:</strong> Instalasi HVAC, Sistem Kontrol, Maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Interior & Design Modals -->
+    <!-- Modal 4 -->
+    <div class="modal fade" id="projectModal4" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Desain Interior Modern</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/design_interior1.jpg" alt="Desain Interior Modern" class="img-fluid mb-3">
+                    <h4>Detail Proyek</h4>
+                    <p>Desain interior modern untuk ruang kerja kolaboratif dengan konsep sustainable.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Lokasi:</strong> Jakarta Pusat</li>
+                        <li><strong>Luas Area:</strong> 2,500 m²</li>
+                        <li><strong>Selesai:</strong> 2023</li>
+                        <li><strong>Layanan:</strong> Desain Interior, Renovasi, Furnishing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4-2 -->
+    <div class="modal fade" id="projectModal4-2" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Renovasi Hotel</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img src="images/design_interior2.jpg" alt="Renovasi Hotel" class="img-fluid mb-3">
+                    <h4>Detail Proyek</h4>
+                    <p>Renovasi interior hotel dengan konsep modern dan elegan.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Lokasi:</strong> Bandung</li>
+                        <li><strong>Luas Area:</strong> 5,000 m²</li>
+                        <li><strong>Selesai:</strong> 2023</li>
+                        <li><strong>Layanan:</strong> Desain Interior, Renovasi, Furnishing</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Contact Us</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <form id="contactForm" class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p><i class="fas fa-map-marker-alt text-primary me-2"></i> Jl. Sirkuit Sentul, Bogor, Jawa Barat</p>
+                        <p><i class="fas fa-phone text-primary me-2"></i> +62 852-8271-7715</p>
+                        <p><i class="fas fa-envelope text-primary me-2"></i> raynzpro@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>PT. FAST</h5>
+                    <p>Building excellence through innovation and dedication.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#about" class="text-white">About</a></li>
+                        <li><a href="#services" class="text-white">Services</a></li>
+                        <li><a href="#projects" class="text-white">Projects</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Connect With Us</h5>
+                    <div class="social-links">
+                        <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 PT. FAST. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="java/script.js"></script>
+</body>
+</html>
