@@ -29,7 +29,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // Prepare email content
-$to = 'raynzpro@gmail.com'; // Replace with your email
+$to = 'raynzpro@gmail.com'; // Replace with FAST's email
 $email_subject = "New Contact Form Submission: $subject";
 $email_body = "You have received a new message from your website contact form.\n\n" .
               "Here are the details:\n\n" .
