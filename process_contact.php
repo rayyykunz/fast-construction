@@ -32,28 +32,68 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
+// Email configuration
+$to_email = 'raynzpro@gmail.com';
+$to_name = 'PT. FAST';
+$from_email = 'noreply@yourdomain.com'; // Replace with your domain email
+$from_name = 'PT. FAST Contact Form';
+
 // Prepare email content
-$to = 'raynzpro@gmail.com';
 $email_subject = "Contact Form: $subject";
 $email_body = "Name: $name\n";
 $email_body .= "Email: $email\n";
 $email_body .= "Subject: $subject\n\n";
 $email_body .= "Message:\n$message";
 
-$headers = "From: $email\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "X-Mailer: PHP/" . phpversion();
-
-// Send email
-if (mail($to, $email_subject, $email_body, $headers)) {
+// Try to send email using PHP's mail function first
+if (mail($to_email, $email_subject, $email_body, "From: $from_name <$from_email>\r\nReply-To: $email\r\n")) {
     echo json_encode([
         'success' => true,
         'message' => 'Thank you for your message. We will get back to you soon!'
     ]);
-} else {
+    exit;
+}
+
+// If mail() fails, try using SMTP
+try {
+    // Include PHPMailer classes
+    require 'vendor/autoload.php';
+    
+    // Create a new PHPMailer instance
+    $mail = new PHPMailer\PHPMailer\PHPMailer(true);
+    
+    // Server settings
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com'; // Replace with your SMTP host
+    $mail->SMTPAuth = true;
+    $mail->Username = 'raynzpro@gmail.com'; // Replace with your email
+    $mail->Password = 'TrzaFX1D'; // Replace with your app password
+    $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+    
+    // Recipients
+    $mail->setFrom($from_email, $from_name);
+    $mail->addAddress($to_email, $to_name);
+    $mail->addReplyTo($email, $name);
+    
+    // Content
+    $mail->isHTML(false);
+    $mail->Subject = $email_subject;
+    $mail->Body = $email_body;
+    
+    $mail->send();
+    
+    echo json_encode([
+        'success' => true,
+        'message' => 'Thank you for your message. We will get back to you soon!'
+    ]);
+} catch (Exception $e) {
+    // Log the error
+    error_log("Email sending failed: " . $e->getMessage());
+    
     echo json_encode([
         'success' => false,
         'error' => 'Failed to send message. Please try again later.'
     ]);
 }
-?> 
+?>
