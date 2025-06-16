@@ -35,7 +35,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // Email configuration
 $to_email = 'raynzpro@gmail.com';
 $to_name = 'PT. FAST';
-$from_email = 'noreply@yourdomain.com'; // Replace with your domain email
+$from_email = 'raynzpro@gmail.com'; // Replace with your domain email
 $from_name = 'PT. FAST Contact Form';
 
 // Prepare email content
