@@ -4,9 +4,11 @@ window.addEventListener('scroll', function() {
     if (window.scrollY > 50) {
         navbar.style.padding = '0.5rem 0';
         navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
     } else {
         navbar.style.padding = '1rem 0';
         navbar.style.backgroundColor = 'white';
+        navbar.style.boxShadow = 'none';
     }
 });
 
@@ -16,9 +18,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
     });
@@ -31,8 +35,12 @@ const nextButton = document.getElementById('nextSlide');
 const indicators = document.querySelectorAll('.indicator');
 let currentSlide = 0;
 let slideInterval;
+let isTransitioning = false;
 
 function showSlide(index) {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    
     // Remove active class from all slides and indicators
     heroSlides.forEach(slide => slide.classList.remove('active'));
     indicators.forEach(indicator => indicator.classList.remove('active'));
@@ -42,6 +50,11 @@ function showSlide(index) {
     indicators[index].classList.add('active');
     
     currentSlide = index;
+    
+    // Reset transition flag after animation
+    setTimeout(() => {
+        isTransitioning = false;
+    }, 1000);
 }
 
 function nextSlide() {
@@ -85,7 +98,7 @@ indicators.forEach((indicator, index) => {
 // Start automatic slideshow
 function startSlideInterval() {
     clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, 3000);
+    slideInterval = setInterval(nextSlide, 5000);
 }
 
 // Initialize the slider
@@ -117,7 +130,7 @@ if (contactForm) {
         const submitButton = this.querySelector('button[type="submit"]');
         const originalButtonText = submitButton.innerHTML;
         submitButton.disabled = true;
-        submitButton.innerHTML = 'Sending...';
+        submitButton.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Sending...';
         
         // Send form data to server
         fetch('process_contact.php', {
@@ -150,14 +163,15 @@ if (contactForm) {
 // Project cards animation
 const projectCards = document.querySelectorAll('.project-item');
 const observerOptions = {
-    threshold: 0.15
+    threshold: 0.15,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            obs.unobserve(entry.target); // hanya animasi sekali
+            obs.unobserve(entry.target);
         }
     });
 }, observerOptions);
@@ -188,6 +202,11 @@ document.querySelectorAll('img').forEach(img => {
     img.addEventListener('load', function() {
         this.classList.add('loaded');
     });
+    
+    // Add loading placeholder
+    if (!img.complete) {
+        img.classList.add('loading');
+    }
 });
 
 // Project filtering
